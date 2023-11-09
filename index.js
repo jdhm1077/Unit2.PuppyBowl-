@@ -24,17 +24,19 @@ const getPlayersPic = async () => {
         //display players pic and infor
         const player = playersArray[i];
         console.log(player);
-        const imagePlayer = player.imageUrl
-        console.log(imagePlayer)
-        
-        
+        const imagePlayer = player.imageUrl;
+        console.log(imagePlayer);
+        const namePlayer = player.name;
+        console.log(namePlayer);
+        const breedPlayer = player.breed;
+        console.log(breedPlayer);
 
    }
    img.alt =`picture of player`;
    //append it
    main.appendChild(img);
 
-   
+   document.appendChild(imgMain);
   
     
   
