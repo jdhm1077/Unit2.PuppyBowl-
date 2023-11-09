@@ -2,6 +2,8 @@
 
 const apiBaseURL = `https://fsa-puppy-bowl.herokuapp.com/api/2310-fsa-et-web-ft-sf/`;
 
+const cardsContainer = document.querySelector(`#cards-container`);
+
 const getPlayersPic = async () => {
     const response = await fetch (`${apiBaseURL}players `);
     const playersPic =await response.json();
@@ -12,13 +14,45 @@ const getPlayersPic = async () => {
     //create an image
    const img = document.createElement(`img`);
     console.log(img)
+    /*const players = document.createElement(`h3`);
+     const name = document.createElement (`h3`); 
+     const like = document.createElement (`Button`);*/
+     const playersArray = playersPic.data.players
     // grab source from message
    img.src = playersPic.data.players[0].imageUrl;
-   img.alt =`picture of player`;
-    //append it
-    main.appendChild(img);
+   for (let i=0; i< playersArray.length; i++){
+        //display players pic and infor
+        const player = playersArray[i];
+        console.log(player);
+        const imagePlayer = player.imageUrl
+        console.log(imagePlayer)
+        
+        
 
+   }
+   img.alt =`picture of player`;
+   //append it
+   main.appendChild(img);
+
+   
+  
+    
+  
+   /* main.classList = `card`;
+    img.classList = `card-img`;
+    like.classList =`empty`;
+
+    main.appendChild(img);
+    main.appendChild(name);
+    //main.appendChild(breed);
+    main.appendChild(like);
+    cardsContainer.appendChild(main);*/
+    
 }
+
+
+
+
 
 
 getPlayersPic();
