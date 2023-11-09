@@ -9,8 +9,8 @@ const getPlayersPic = async () => {
     const playersPic =await response.json();
     console.log(playersPic);
     //grab the main with querySelector
-    const main = document.querySelector(`main`);
-    //console.log(main)
+    const div = document.querySelector(`div`);
+    //console.log(div)
     //create an image
    const img = document.createElement(`img`);
     console.log(img)
@@ -34,9 +34,9 @@ const getPlayersPic = async () => {
    }
    img.alt =`picture of player`;
    //append it
-   main.appendChild(img);
+   div.appendChild(img);
 
-   document.appendChild(imgMain);
+   
   
     
   
